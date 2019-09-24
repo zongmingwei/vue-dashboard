@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -22,7 +22,14 @@ export default {
 }
 
 body {
+  margin: 0;
   background: $dark-blue;
+}
+
+line,
+text {
+  stroke: $light-gray;
+  opacity: 0.2;
 }
 
 h1 {
