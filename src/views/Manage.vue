@@ -2,7 +2,7 @@
   <div class="manage">
     <Header />
     <div class="container">
-      <h1 :class="{'dark' : !isDarkMode, 'light' : isDarkMode}">Manage Users</h1>
+      <h1 :class="{'light-text' : isDarkMode, 'dark-text' : !isDarkMode}">Manage Users</h1>
       <p
         :class="{'light-text': isDarkMode, 'dark-text': !isDarkMode}"
       >Enter either customer email or subscription ID</p>
@@ -35,7 +35,7 @@
         >Get Customer Details</button>
       </form>
       <hr class="line-break" />
-      <h1 :class="{'dark' : !isDarkMode, 'light' : isDarkMode}">Customer Details</h1>
+      <h1 :class="{'light-text' : isDarkMode, 'dark-text' : !isDarkMode}">Customer Details</h1>
       <div class="details-container">
         <div class="detail">
           <div
@@ -147,6 +147,14 @@ export default {
 .container {
   padding-left: 15%;
   padding-right: 15%;
+}
+
+.light-text {
+  color: $white;
+}
+
+.dark-text {
+  color: $black;
 }
 
 h1 {

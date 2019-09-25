@@ -4,27 +4,26 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "run-p start:**",
-    "start:app": "react--scripts start",
     "start: lambda": "netlify-lambda serve src/functions",
-    "build2": "run-p build:**",
-    "build:app": "react-scripts build",
     "build:lambda": "netlify-lambda build src/functions",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build:vue": "vue-cli-service build"
   },
   "dependencies": {
+    "@firebase/app": "^0.4.17",
+    "@firebase/firestore": "^1.5.3",
+    "@netlify/zip-it-and-ship-it": "^0.3.1",
     "animate.css": "^3.7.2",
     "apexcharts": "^3.8.6",
     "core-js": "^2.6.5",
+    "firebase-admin": "^8.6.0",
     "gotrue-js": "^0.9.25",
     "netlify-identity-widget": "^1.5.5",
     "netlify-lambda": "^1.6.3",
     "vue": "^2.6.10",
     "vue-apexcharts": "^1.5.0",
     "vue-router": "^3.0.3",
+    "vuefire": "^2.1.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
