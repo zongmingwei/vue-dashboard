@@ -2,7 +2,7 @@
   <div class="manage">
     <Header />
     <div class="container">
-      <h2>Team</h2>
+      <h2 :class="{'h2-dark' : !isDarkMode, 'h2-light' : isDarkMode}">Team</h2>
       <div class="cards">
         <transition appear appear-active-class="animated flipInX">
           <a class="card card-1" :class="{'light-card' : !isDarkMode, 'dark-card' : isDarkMode}">
@@ -163,8 +163,12 @@ export default {
   background: #283049;
 }
 
-h2 {
-  @include heading-3;
+h2.dark {
+  @include heading-3(black);
+}
+
+h2.light {
+  @include heading-3(white);
 }
 
 h3 {
