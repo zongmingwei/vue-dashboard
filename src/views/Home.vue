@@ -3,14 +3,23 @@
     <Header />
     <div class="container">
       <div class="spread">
-        <h1>Traffic Overview</h1>
-        <div class="toggle">
+        <h1 :class="{'dark': !isDarkMode, 'light': isDarkMode
+        }">Traffic Overview</h1>
+        <div class="toggle" :class="{'light-box': isDarkMode, 'dark-box': !isDarkMode}">
           <div ref="days" class="days" @click="toggleDays">Days</div>
           <div ref="weeks" class="weeks" @click="toggleWeeks">Weeks</div>
           <div ref="months" class="months" @click="toggleMonths">Months</div>
         </div>
       </div>
       <apexchart width="100%" type="area" :options="chartOptions" :series="series"></apexchart>
+      <iframe
+        width="600"
+        height="450"
+        src="https://datastudio.google.com/embed/reporting/1I9SBXuVkWlyLsOEH6eXuX13iKM8nAN2o/page/0e70"
+        frameborder="0"
+        style="border:0"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </template>
@@ -21,6 +30,11 @@ import Header from "@/components/Header.vue";
 
 export default {
   name: "home",
+  computed: {
+    isDarkMode() {
+      return this.$store.getters.isDarkMode;
+    }
+  },
   components: {
     Header,
     apexchart: VueApexCharts
@@ -31,7 +45,7 @@ export default {
         colors: ["#14f1d9", "#7b42f6"],
         legend: {
           labels: {
-            colors: ["white"]
+            colors: [this.$store.getters.isDarkMode ? "white" : "black"]
           },
           position: "top"
         },
@@ -130,8 +144,12 @@ export default {
   width: 100%;
 }
 
-h1 {
-  @include heading-3;
+h1.dark {
+  @include heading-3($black);
+}
+
+h1.light {
+  @include heading-3($white);
 }
 
 .toggle {
@@ -143,8 +161,6 @@ h1 {
   padding: 5px;
   display: flex;
   flex-wrap: nowrap;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 
   &:hover {
     cursor: pointer;
