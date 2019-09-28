@@ -2,11 +2,11 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Team from "./views/Team.vue";
+import Manage from "./views/Manage.vue";
 import SignIn from "./views/SignInFlow/SignIn";
 import Request from "./views/SignInFlow/Request";
 import Recover from "./views/SignInFlow/Recover";
 import * as netlifyIdentityWidget from "netlify-identity-widget";
-import Manage from "./views/Manage.vue";
 
 Vue.use(Router);
 
