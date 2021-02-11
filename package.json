@@ -14,7 +14,7 @@
     "@firebase/firestore": "^1.5.4",
     "@netlify/zip-it-and-ship-it": "^0.3.1",
     "animate.css": "^3.7.2",
-    "apexcharts": "^3.8.6",
+    "apexcharts": "^3.24.0",
     "core-js": "^2.6.5",
     "firebase-admin": "^8.6.0",
     "gotrue-js": "^0.9.25",
